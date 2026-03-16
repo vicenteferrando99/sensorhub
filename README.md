@@ -1,4 +1,4 @@
-# SensorHub
+# SensorHub mkñasjdlñas
 
 REST API for IoT environmental monitoring. Sensors send temperature, humidity and CO2 readings which are stored in MongoDB and aggregated into hourly CSV reports uploaded to MinIO.
 
@@ -48,4 +48,5 @@ git push          # release created automatically on merge to main
 ```
 A
 
-Hola
+hola
+a ver si funciona este cambio
