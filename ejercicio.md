@@ -33,6 +33,14 @@ El consumidor. Es un proceso independiente (no FastAPI) que:
 - Confirma cada mensaje con `basic_ack` tras añadirlo al buffer
 - Se arranca como módulo: `python -m sensorhub.worker`
 
+### `simulator.py`
+Script local que simula sensores publicando en la cola:
+- Define una lista de dispositivos ficticios con `device_id` y `location`
+- Genera lecturas aleatorias de temperatura, humedad y CO2
+- Las publica en RabbitMQ con la librería `pika`
+- Acepta parámetros: `--rate` (mensajes/segundo) y `--total` (nº total, opcional)
+- Conecta a `localhost:5672` (se ejecuta fuera de Docker)
+
 ### `sensorhub/mongo.py` — nuevo método
 Añade `insert_many(self, documents: list[dict]) -> int` a la clase `MongoDB` que use `insert_many()` de pymongo y devuelva el número de documentos insertados.
 
